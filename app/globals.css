@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+:root {
+  /* Brand Colors */
+  --primary: #007aff;
+  --primary-hover: #0056b3;
+
+  /* Neutral Colors */
+  --background: #e5f2fe;
+  --foreground: #1d2026;
+  --muted-foreground: #475569;
+
+  /* Cloud Colors */
+  --cloud-1: #cee6ff;
+  --cloud-2: #d3e9ff;
+  --cloud-3: #dbecfe;
+  --cloud-4: #e8f3ff;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-sans: var(--font-inter);
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Force light color scheme */
+html {
+  color-scheme: light;
+}
+
+/* Animations */
+@keyframes rise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise 1.5s ease-out forwards;
+}
+
+/* Animation for small birds - rise from lower position */
+@keyframes rise-bird {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-rise-bird {
+  animation: rise-bird 1.5s ease-out forwards;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
