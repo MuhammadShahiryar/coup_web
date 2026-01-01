@@ -23,8 +23,8 @@ Send iMessages directly from your phone number, running securely on your Mac or 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/coup-web.git
-   cd coup-web
+   git clone https://github.com/MuhammadShahiryar/coup_web
+   cd coup_web
    ```
 
 2. **Install dependencies**
@@ -51,19 +51,19 @@ Send iMessages directly from your phone number, running securely on your Mac or 
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start development server |
-| `pnpm build` | Create production build |
-| `pnpm start` | Start production server |
-| `pnpm lint` | Run ESLint |
-| `pnpm lint:fix` | Fix ESLint errors |
+| Command           | Description                  |
+| ----------------- | ---------------------------- |
+| `pnpm dev`        | Start development server     |
+| `pnpm build`      | Create production build      |
+| `pnpm start`      | Start production server      |
+| `pnpm lint`       | Run ESLint                   |
+| `pnpm lint:fix`   | Fix ESLint errors            |
 | `pnpm type-check` | Run TypeScript type checking |
 
 ## Project Structure
 
 ```
-coup-web/
+coup_web/
 ├── app/                    # App Router (routing files only)
 │   ├── layout.tsx          # Root layout
 │   ├── page.tsx            # Home page
@@ -109,8 +109,8 @@ coup-web/
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
+| Variable              | Description    |
+| --------------------- | -------------- |
 | `NEXT_PUBLIC_APP_URL` | Public app URL |
 
 See `.env.example` for all available variables.
@@ -119,7 +119,7 @@ See `.env.example` for all available variables.
 
 ### Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/coup-web)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/coup_web)
 
 ### Manual Deployment
 

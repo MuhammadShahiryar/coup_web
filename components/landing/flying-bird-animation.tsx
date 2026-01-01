@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface FlyingBirdProps {
   flip?: boolean;
@@ -11,8 +11,17 @@ interface FlyingBirdProps {
   endY?: number;
 }
 
-function FlyingBird({ flip = false, duration = 6, delay = 0, startY = 0.8, endY = 0.2 }: FlyingBirdProps) {
-  const [windowSize, setWindowSize] = useState<{ width: number; height: number } | null>(null);
+function FlyingBird({
+  flip = false,
+  duration = 6,
+  delay = 0,
+  startY = 0.8,
+  endY = 0.2,
+}: FlyingBirdProps) {
+  const [windowSize, setWindowSize] = useState<{
+    width: number;
+    height: number;
+  } | null>(null);
 
   useEffect(() => {
     const updateSize = () => {
@@ -20,20 +29,21 @@ function FlyingBird({ flip = false, duration = 6, delay = 0, startY = 0.8, endY 
     };
 
     updateSize();
-    window.addEventListener('resize', updateSize);
-    return () => window.removeEventListener('resize', updateSize);
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   if (!windowSize) return null;
 
   // Scale bird size based on screen width
-  const scale = windowSize.width < 640 ? 0.5 : windowSize.width < 1024 ? 0.75 : 1;
+  const scale =
+    windowSize.width < 640 ? 0.5 : windowSize.width < 1024 ? 0.75 : 1;
   const birdWidth = 129 * scale;
   const birdHeight = 55 * scale;
 
   return (
     <motion.div
-      style={{ position: 'absolute', top: 0, left: 0 }}
+      style={{ position: "absolute", top: 0, left: 0 }}
       initial={{
         x: flip ? windowSize.width + 50 : -150,
         y: windowSize.height * startY,
@@ -44,7 +54,7 @@ function FlyingBird({ flip = false, duration = 6, delay = 0, startY = 0.8, endY 
         y: windowSize.height * endY,
         opacity: 1,
       }}
-      transition={{ duration, ease: 'linear', delay, repeat: 0 }}
+      transition={{ duration, ease: "linear", delay, repeat: 0 }}
     >
       <svg
         width={birdWidth}
@@ -52,7 +62,7 @@ function FlyingBird({ flip = false, duration = 6, delay = 0, startY = 0.8, endY 
         viewBox="0 0 129 55"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={flip ? 'scale-x-[-1]' : ''}
+        className={flip ? "scale-x-[-1]" : ""}
         aria-hidden="true"
       >
         <path
