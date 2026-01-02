@@ -7,7 +7,7 @@ function SmallBird({ flip = false }: { flip?: boolean }) {
       viewBox="0 0 42 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ transform: flip ? 'scaleX(-1)' : undefined }}
+      style={{ transform: flip ? "scaleX(-1)" : undefined }}
       aria-hidden="true"
     >
       <path
@@ -21,8 +21,10 @@ function SmallBird({ flip = false }: { flip?: boolean }) {
 // Scroll indicator component
 function ScrollIndicator() {
   return (
-    <div className="absolute bottom-[60px] sm:bottom-[70px] md:bottom-[80px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-50 animate-rise">
-      <span className="text-foreground text-sm md:text-base font-medium">Scroll to learn more</span>
+    <div className="absolute bottom-[60px] sm:bottom-[70px] md:bottom-[120px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-50 animate-rise">
+      <span className="text-foreground text-sm md:text-base font-medium">
+        Scroll to learn more
+      </span>
       <svg
         width="20"
         height="28"

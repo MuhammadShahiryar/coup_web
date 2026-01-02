@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui';
-import { MessageBadge } from './message-badge';
-import { AppleIcon } from '@/components/icons';
+import { Button } from "@/components/ui";
+import { MessageBadge } from "./message-badge";
+import { AppleIcon } from "@/components/icons";
 
 export function HeroSection() {
   return (
@@ -11,7 +11,7 @@ export function HeroSection() {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
-          <span className="text-primary">iMessage</span>{' '}
+          <span className="text-primary">iMessage</span>{" "}
           <span className="text-foreground">Automation</span>
           <br />
           <span className="text-foreground">for Teams and AI</span>
@@ -27,12 +27,12 @@ export function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg">Get Started</Button>
+          <Button size="lg" animated={false}>Get Started</Button>
 
           <a
             href="#download"
-            className="flex items-center gap-2 px-5 py-2.5 border border-foreground rounded-full text-foreground text-base font-semibold hover:bg-foreground hover:text-white transition-colors"
-            aria-label="Download Mac App"
+            className="flex items-center gap-2 px-5 py-2.5 border border-foreground rounded-full text-foreground text-base font-semibold"
+            aria-label="Download Coup Mac App"
           >
             <AppleIcon className="w-5 h-5" />
             <span className="w-px h-4 bg-current mx-1" aria-hidden="true" />

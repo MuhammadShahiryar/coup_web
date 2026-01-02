@@ -7,7 +7,7 @@ import {
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden">
+    <main id="main-content" className="relative min-h-screen w-full overflow-hidden">
       {/* Hero Section */}
       <HeroSection />
 

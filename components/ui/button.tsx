@@ -6,12 +6,14 @@ import { cn } from '@/lib/utils';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
+  animated?: boolean;
   children: React.ReactNode;
 }
 
 export function Button({
   variant = 'primary',
   size = 'md',
+  animated = true,
   className,
   children,
   ...props
@@ -22,7 +24,8 @@ export function Button({
       className={cn(
         'group relative inline-flex items-center justify-center font-semibold rounded-full transition-colors duration-300 overflow-hidden',
         {
-          'bg-primary text-white hover:text-primary': variant === 'primary',
+          'bg-primary text-white': variant === 'primary',
+          'hover:text-primary': variant === 'primary' && animated,
           'bg-secondary text-foreground': variant === 'secondary',
           'border border-foreground text-foreground bg-transparent': variant === 'outline',
         },
@@ -36,7 +39,7 @@ export function Button({
       {...props}
     >
       <span className="relative z-10">{children}</span>
-      {variant === 'primary' && (
+      {variant === 'primary' && animated && (
         <span
           className="absolute inset-0 z-0 bg-white rounded-full transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100"
           aria-hidden="true"
