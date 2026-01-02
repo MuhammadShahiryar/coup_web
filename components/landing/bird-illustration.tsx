@@ -1,5 +1,11 @@
 // Small bird SVG (no chat bubble) - for top area
-function SmallBird({ flip = false }: { flip?: boolean }) {
+function SmallBird({
+  flip = false,
+  opacity_bird = "1",
+}: {
+  flip?: boolean;
+  opacity_bird?: string;
+}) {
   return (
     <svg
       width="42"
@@ -13,35 +19,39 @@ function SmallBird({ flip = false }: { flip?: boolean }) {
       <path
         d="M0.184547 0.00157207C1.3409 0.0785971 9.20524 1.31197 13.0604 2.23725C16.9155 3.16252 20.9247 8.48212 21.85 8.71319C22.7753 8.94427 27.2466 8.4051 31.1018 8.09602C34.9569 7.78792 42.3582 12.0282 42.3582 12.0282C42.3582 13.6477 34.8789 11.18 32.2581 11.0259C29.6364 10.8719 25.5501 11.7201 24.7019 12.4133C23.8536 13.1075 22.2351 14.0328 20.8467 13.9558C19.4593 13.8788 15.5271 11.1029 15.141 10.5638C14.7549 10.0236 16.7605 9.79251 16.7605 9.79251C16.7605 9.79251 16.7605 9.79253 14.91 7.47983C13.0594 5.16713 8.97319 4.0878 6.27439 3.3936C3.57754 2.70038 -0.971803 -0.0754529 0.184547 0.00157207Z"
         fill="#00336B"
+        opacity={opacity_bird}
       />
     </svg>
   );
 }
 
-// Scroll indicator component
 function ScrollIndicator() {
   return (
-    <div className="absolute bottom-[60px] sm:bottom-[70px] md:bottom-[120px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-50 animate-rise">
-      <span className="text-foreground text-sm md:text-base font-medium">
+    <div className="absolute bottom-[100px] sm:bottom-[115px] md:bottom-[130px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-50 animate-rise">
+      <span className="text-foreground text-base md:text-lg font-medium">
         Scroll to learn more
       </span>
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 20 28"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
         fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
         className="text-foreground"
       >
-        {/* Horizontal line at top */}
-        <path d="M6 1h8" />
-        {/* Vertical line */}
-        <path d="M10 1v18" />
-        {/* V-shaped arrow head */}
-        <path d="M4 20l6 6 6-6" />
+        <path
+          d="M13.8632 24.7812L12.8481 23.4926C11.2035 21.4048 10.3812 20.361 10.7562 19.5139C11.1313 18.6667 12.4158 18.6667 14.9848 18.6667H17.0151C19.5841 18.6667 20.8685 18.6667 21.2437 19.5139C21.6188 20.361 20.7964 21.4048 19.1517 23.4926L18.1367 24.7811C17.1464 26.0382 16.6513 26.6667 16 26.6667C15.3485 26.6667 14.8535 26.0382 13.8632 24.7812Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M16 18.6666V5.33331"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </div>
   );
@@ -53,26 +63,31 @@ export function BirdIllustration() {
       className="absolute inset-0 pointer-events-none overflow-hidden"
       aria-hidden="true"
     >
-      {/* ===== TOP SMALL BIRDS - positioned at edges on small screens ===== */}
-
-      {/* Bird 1 - Left side, level with "iMessage" */}
       <div className="absolute left-[2%] sm:left-[5%] md:left-[10%] top-[120px] sm:top-[140px] md:top-[160px] lg:top-[180px] animate-rise-bird">
         <SmallBird />
       </div>
 
-      {/* Bird 2 - Left side, lower, level with "for Teams" */}
       <div className="absolute left-[1%] sm:left-[8%] md:left-[22%] top-[200px] sm:top-[220px] md:top-[230px] lg:top-[250px] animate-rise-bird">
-        <SmallBird />
+        <SmallBird opacity_bird="0.3" />
       </div>
 
-      {/* Bird 3 - Right side, level with "iMessage" */}
       <div className="absolute right-[2%] sm:right-[6%] md:right-[20%] top-[100px] sm:top-[120px] md:top-[160px] lg:top-[190px] animate-rise-bird">
         <SmallBird />
       </div>
 
-      {/* Bird 4 - Right side, lower, level with "Workflows" */}
       <div className="absolute right-[1%] sm:right-[5%] md:right-[17%] top-[260px] sm:top-[280px] md:top-[300px] lg:top-[340px] animate-rise-bird">
+        <SmallBird opacity_bird="0.3" />
+      </div>
+
+      {/* Still Birds */}
+      <div className="absolute left-[1%] sm:left-[8%] md:left-[22%] top-[200px] sm:top-[220px] md:top-[230px] lg:top-[250px]">
         <SmallBird />
+        <div className="absolute inset-x-0 bottom-[-4px] h-1 bg-black/20 rounded-full blur-sm"></div>
+      </div>
+
+      <div className="absolute right-[1%] sm:right-[5%] md:right-[17%] top-[260px] sm:top-[280px] md:top-[300px] lg:top-[340px]">
+        <SmallBird />
+        <div className="absolute inset-x-0 bottom-[-4px] h-1 bg-black/20 rounded-full blur-sm"></div>
       </div>
 
       {/* Scroll indicator */}
@@ -236,7 +251,6 @@ export function BirdIllustration() {
           fill="#00336B"
         />
 
-        {/* Clip paths */}
         <defs>
           <clipPath id="clip0_1_204">
             <rect

@@ -11,7 +11,6 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
-  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="w-full flex justify-center pt-6 relative z-50">
@@ -27,13 +26,12 @@ export function Header() {
           aria-label="Main navigation"
         >
           {NAV_ITEMS.map((item) => (
-            <Link
+            <span
               key={item.label}
-              href={item.href}
-              className="transition-colors duration-200 hover:text-gray-900"
+              className="cursor-pointer transition-colors duration-200 hover:text-gray-900"
             >
               {item.label}
-            </Link>
+            </span>
           ))}
         </nav>
 
@@ -68,14 +66,12 @@ export function Header() {
         >
           <nav className="flex flex-col gap-2 p-4 text-gray-700">
             {NAV_ITEMS.map((item) => (
-              <Link
+              <span
                 key={item.label}
-                href={item.href}
-                className="py-2 px-4 rounded hover:bg-gray-100 transition"
-                onClick={closeMenu}
+                className="cursor-pointer py-2 px-4 rounded hover:bg-gray-100 transition"
               >
                 {item.label}
-              </Link>
+              </span>
             ))}
             <div className="mt-2">
               <Button className="w-full">Contact Sales</Button>

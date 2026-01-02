@@ -35,7 +35,6 @@ function FlyingBird({
 
   if (!windowSize) return null;
 
-  // Scale bird size based on screen width
   const scale =
     windowSize.width < 640 ? 0.5 : windowSize.width < 1024 ? 0.75 : 1;
   const birdWidth = 129 * scale;
@@ -109,9 +108,7 @@ export function FlyingBirdAnimation() {
       className="fixed inset-0 pointer-events-none overflow-hidden z-30"
       aria-hidden="true"
     >
-      {/* Left bird: flies from bottom-left to top-right (lower path) */}
       <FlyingBird duration={3} delay={2} startY={0.75} endY={0.35} />
-      {/* Right bird: flies from bottom-right to top-left (upper path) */}
       <FlyingBird flip duration={3} delay={2} startY={0.65} endY={0.25} />
     </div>
   );
