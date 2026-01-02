@@ -22,10 +22,10 @@ export function Button({
     <button
       type="button"
       className={cn(
-        'group relative inline-flex items-center justify-center font-semibold rounded-full transition-colors duration-300 overflow-hidden',
+        'group relative inline-flex items-center justify-center font-semibold rounded-full overflow-hidden',
         {
-          'bg-primary text-white': variant === 'primary',
-          'hover:text-primary': variant === 'primary' && animated,
+          'bg-primary text-white': variant === 'primary' && !animated,
+          'bg-primary text-white transition-all duration-300 hover:bg-white hover:text-primary hover:shadow-[0_8px_30px_rgba(0,0,0,0.12),0_4px_10px_rgba(0,0,0,0.08)]': variant === 'primary' && animated,
           'bg-secondary text-foreground': variant === 'secondary',
           'border border-foreground text-foreground bg-transparent': variant === 'outline',
         },
@@ -41,7 +41,7 @@ export function Button({
       <span className="relative z-10">{children}</span>
       {variant === 'primary' && animated && (
         <span
-          className="absolute inset-0 z-0 bg-white rounded-full transform scale-x-0 origin-right transition-transform duration-300 ease-out group-hover:scale-x-100"
+          className="absolute inset-0 z-0 bg-white origin-right scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"
           aria-hidden="true"
         />
       )}
